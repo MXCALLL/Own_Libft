@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MXCALL <MXCALL@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mxcall <mxcall@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 21:47:55 by MXCALL            #+#    #+#             */
-/*   Updated: 2024/10/02 22:19:19 by MXCALL           ###   ########.fr       */
+/*   Updated: 2024/10/13 17:57:02 by mxcall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
