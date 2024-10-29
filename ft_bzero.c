@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MXCALL <MXCALL@student.42.fr>              +#+  +:+       +#+        */
+/*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 21:59:15 by MXCALL            #+#    #+#             */
-/*   Updated: 2024/10/06 23:04:59 by MXCALL           ###   ########.fr       */
+/*   Created: 2024/10/22 11:46:03 by muidbell          #+#    #+#             */
+/*   Updated: 2024/10/22 13:19:15 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	unsigned char	*s_ptr;
 	size_t			i;
-	unsigned char	*str;
 
-	str = (unsigned char *)s;
+	s_ptr = (unsigned char *)s;
+	i = 0;
 	while (i < n)
 	{
-		str[i] = 0;
+		s_ptr[i] = 0;
 		i++;
 	}
 }

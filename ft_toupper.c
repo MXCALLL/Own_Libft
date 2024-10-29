@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MXCALL <MXCALL@student.42.fr>              +#+  +:+       +#+        */
+/*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 00:53:21 by MXCALL            #+#    #+#             */
-/*   Updated: 2024/10/03 01:13:17 by MXCALL           ###   ########.fr       */
+/*   Created: 2024/10/23 18:09:17 by muidbell          #+#    #+#             */
+/*   Updated: 2024/10/23 18:20:27 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+		c -= 32;
+	return (c);
 }
