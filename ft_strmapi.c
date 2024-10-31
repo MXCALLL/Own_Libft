@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 16:02:56 by muidbell          #+#    #+#             */
-/*   Updated: 2024/10/30 18:43:02 by muidbell         ###   ########.fr       */
+/*   Created: 2024/10/31 13:18:07 by muidbell          #+#    #+#             */
+/*   Updated: 2024/10/31 14:01:20 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char		*str;
+	size_t		len;
 	size_t		i;
-	size_t		j;
-	size_t		s2_len;
 
-	if (*s2 == '\0')
-		return ((char *)s1);
-	s2_len = ft_strlen(s2);
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i < len && s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		j = 0;
-		while (s2[j] != '\0' && i + j < len)
-		{
-			if (s1[i + j] != s2[j])
-				break ;
-			j++;
-			if (j == s2_len)
-				return ((char *)&s1[i]);
-		}
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }
