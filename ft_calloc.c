@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:46:08 by muidbell          #+#    #+#             */
-/*   Updated: 2024/10/28 15:59:37 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:14:11 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t		totalby;
 	void		*ptr;
 
-	if (count == 0 || size == 0)
-		return (malloc(1));
 	totalby = count * size;
-	if (totalby / count != size)
+	if (count != 0 && totalby / count != size)
 		return (NULL);
 	ptr = malloc(totalby);
 	if (ptr == NULL)

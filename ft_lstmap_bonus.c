@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 13:18:07 by muidbell          #+#    #+#             */
-/*   Updated: 2024/10/31 14:59:40 by muidbell         ###   ########.fr       */
+/*   Created: 2024/11/04 21:26:03 by muidbell          #+#    #+#             */
+/*   Updated: 2024/11/06 18:01:06 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char		*str;
-	size_t		len;
-	size_t		i;
+	t_list	*head;
+	t_list	*nodes;
+	t_list	*temp;
 
-	if (!s || !f)
-		return (NULL);
-	len = ft_strlen(s);
-	str = malloc(len + 1);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
+	if(!f || !del)
+		return(NULL);
+	head = NULL;
+	while (lst != NULL)
 	{
-		str[i] = (*f)(i, s[i]);
-		i++;
+		nodes = ft_lstnew(f(lst->content));
+		if (nodes == NULL)
+		{
+			ft_lstdelone(nodes->content,del);
+			return (NULL);
+		}
+		if (head == NULL)
+			head = nodes;
+		else
+			temp->next = nodes;
+		temp = nodes;
+		lst = lst->next;
 	}
-	str[i] = '\0';
-	return (str);
+	return (head);
 }
