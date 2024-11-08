@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 21:26:03 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/06 18:01:06 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:11:45 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*nodes;
 	t_list	*temp;
 
-	if(!f || !del)
-		return(NULL);
 	head = NULL;
+	if (!f || !del)
+		return (NULL);
 	while (lst != NULL)
 	{
 		nodes = ft_lstnew(f(lst->content));
-		if (nodes == NULL)
+		if (!nodes)
 		{
-			ft_lstdelone(nodes->content,del);
+			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		if (head == NULL)
+		if (!head)
 			head = nodes;
 		else
 			temp->next = nodes;

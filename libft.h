@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:22:25 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 11:53:38 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:17:56 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 
-# define long_max 922337203685477580
+# define MAX_LONG 922337203685477580
 
 typedef struct s_list
 {
@@ -69,6 +69,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
 
 #endif

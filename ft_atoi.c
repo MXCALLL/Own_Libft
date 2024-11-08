@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:48:11 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 11:53:57 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:17:53 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static long int	check_overflow(long result, int sign, int next_digit)
 {
-	if (result > long_max || (result ==  long_max && next_digit > 7))
+	if (result > MAX_LONG || (result == MAX_LONG && next_digit > 7))
 	{
 		if (sign == 1)
 			return (-1);
 		return (0);
 	}
-	return(1);
+	return (1);
 }
 
 int	ft_atoi(const char *nptr)
@@ -45,7 +45,7 @@ int	ft_atoi(const char *nptr)
 		next_digit = *nptr - '0';
 		overflow_check = check_overflow(result, sign, next_digit);
 		if (overflow_check != 1)
-			return overflow_check;
+			return (overflow_check);
 		result = result * 10 + next_digit;
 		nptr++;
 	}
