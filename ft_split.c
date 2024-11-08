@@ -6,20 +6,20 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:51:43 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/07 21:55:49 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/08 12:02:19 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t count_word(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	count;
 	size_t	i;
 
 	i = 0;
 	count = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			count++;
@@ -28,51 +28,75 @@ static size_t count_word(char const *s, char c)
 	return (count);
 }
 
+static char	*alloc_word(const char *s, size_t len)
+{
+	char	*word;
+	size_t	i;
+
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static void	freeall(char **words, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		n--;
+		free(words[i]);
+		words[i] = NULL;
+		i++;
+	}
+	free(words);
+	words = NULL;
+}
+
+static char	*get_next_word(char const **s, char c)
+{
+	size_t	len;
+	char	*word;
+
+	while (**s == c)
+		(*s)++;
+	len = 0;
+	while ((*s)[len] && (*s)[len] != c)
+		len++;
+	word = alloc_word(*s, len);
+	*s += len;
+	return (word);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char		**str;
-	size_t		start;
-	size_t		end;
-	size_t		count;
-	size_t		word_index;
+	char	**words;
+	size_t	word_count;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	count = count_word(s,c);
-	str = malloc(sizeof(char *) * (count + 1));
-	if (!str)
+	word_count = count_words(s, c);
+	words = malloc(sizeof(char *) * (word_count + 1));
+	if (!words)
 		return (NULL);
-	start = 0;
-	word_index = 0;
-	while(s[start] != '\0' && word_index < count)
+	i = 0;
+	while (i < word_count)
 	{
-		while(s[start] == c)
-			start++;
-		end = start;
-		while(s[end] != '\0' && s[end] != c)
-			end++;
-		if (start < end)
-		{
-			str[word_index] = ft_substr(s,start,end-start);
-			if(!str[word_index])
-				return (NULL);
-			word_index++;
-			start = end;
-		}
-		else
-			start++;
+		words[i] = get_next_word(&s, c);
+		if (!words[i])
+			return (freeall(words, i), NULL);
+		i++;
 	}
-	str[word_index] = NULL;
-	return (str);
+	words[i] = NULL;
+	return (words);
 }
-// int main()
-// {
-// 	char *s = "$Hello$$World";
-// 	char **result = ft_split(s, '$');
-
-// 	for (int i = 0; result[i] != NULL; i++)
-// 	{
-// 		printf("word{%d}: %s\n",i,result[i]);
-// 	}
-
-// }

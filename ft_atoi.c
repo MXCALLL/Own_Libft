@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:48:11 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/07 18:21:17 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:53:57 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static long int	check_overflow(long result, int sign, int next_digit)
 {
-	if (result > LONG_MAX || (result ==  LONG_MAX && next_digit > 7))
+	if (result > long_max || (result ==  long_max && next_digit > 7))
 	{
 		if (sign == 1)
 			return (-1);
