@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:51:43 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 12:02:19 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 20:51:56 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	size_t	word_count;
 	size_t	i;
 
-	if (!s)
+	if (!s || *s == '\0')
 		return (NULL);
 	word_count = count_words(s, c);
 	words = malloc(sizeof(char *) * (word_count + 1));
@@ -100,3 +100,13 @@ char	**ft_split(char const *s, char c)
 	words[i] = NULL;
 	return (words);
 }
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char **s = ft_split("Hello$$$world!$$",'$');
+// 	for(int i = 0; s[i] != NULL; i++)
+// 	{
+// 		printf("%s\n",s[i]);
+// 	}
+// }

@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:39:09 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 17:46:22 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:17:07 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*temp;
 	t_list	*current;
 
+	if (lst == NULL || del == NULL)
+		return ;
 	current = *lst;
 	while (current != NULL)
 	{

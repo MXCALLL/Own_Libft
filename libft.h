@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:22:25 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 17:17:56 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:06:12 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
 
-# define MAX_LONG 922337203685477580
+# define MAX 9223372036854775807
 
 typedef struct s_list
 {

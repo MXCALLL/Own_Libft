@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:02:56 by muidbell          #+#    #+#             */
-/*   Updated: 2024/10/30 18:43:02 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 21:47:17 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		i++;
 	}
 	return (NULL);
+}
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	// printf ("%s\n",ft_strnstr("HELLO MUSTAPHA Hani", "MUSTAPHA",14));
+	printf ("%s\n",strnstr("HELLO MUSTAPHA Hani", "MUSTAPHA",14));
 }

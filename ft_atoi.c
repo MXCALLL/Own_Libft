@@ -6,19 +6,20 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:48:11 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 16:17:53 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:12:25 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long int	check_overflow(long result, int sign, int next_digit)
+static	int	check_overflow(long result, int sign, int next_digit)
 {
-	if (result > MAX_LONG || (result == MAX_LONG && next_digit > 7))
+	if (result > MAX || (result == MAX && next_digit > 7))
 	{
 		if (sign == 1)
 			return (-1);
-		return (0);
+		else
+			return (0);
 	}
 	return (1);
 }
@@ -51,3 +52,11 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(result * sign));
 }
+// #include <stdio.h>
+
+// int main()
+// {
+// 	printf ("%d\n", ft_atoi("-9223372036854775809"));
+// 	printf ("%d\n", atoi("-9223372036854775809"));
+// 	return 0;
+// }

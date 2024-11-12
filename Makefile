@@ -24,7 +24,7 @@ ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} -c $< -o $@
 	${LIBC} ${NAME} $@
 
-bonus: ${OBJS} ${OBJSB}
+bonus: ${OBJSB}
 
 clean:
 	${RM} ${OBJS} ${OBJSB}
@@ -34,4 +34,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : all bonus clean fclean re
+.PHONY : clean

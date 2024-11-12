@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:39:14 by muidbell          #+#    #+#             */
-/*   Updated: 2024/10/25 12:33:17 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 21:50:34 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,10 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	// printf("%s\n",ft_strrchr(NULL,'@'));
+// 	printf("%s\n",strrchr(NULL,'@'));
+// }

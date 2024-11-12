@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 21:18:20 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/08 16:12:53 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:30:36 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (lst == NULL || f == NULL)
+		return ;
 	while (lst != NULL)
 	{
 		f(lst->content);
