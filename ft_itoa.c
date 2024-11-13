@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:17:34 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/12 10:40:05 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:32:10 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	printf("%s\n",ft_itoa(54544));
-// }

@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:51:43 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/12 20:51:56 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:41:26 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,3 @@ char	**ft_split(char const *s, char c)
 	words[i] = NULL;
 	return (words);
 }
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char **s = ft_split("Hello$$$world!$$",'$');
-// 	for(int i = 0; s[i] != NULL; i++)
-// 	{
-// 		printf("%s\n",s[i]);
-// 	}
-// }

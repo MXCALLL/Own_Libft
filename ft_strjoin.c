@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:40:27 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/12 10:22:58 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:37:32 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	total_alloc[s1_len + s2_len] = '\0';
 	return (total_alloc);
 }
-// #include <stdio.h>
-// int main ()
-// {
-// 	char **str = ft_split(NULL, ' ');
-// 	printf("%s\n", str[0]);
-// }
