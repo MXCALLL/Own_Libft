@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:17:48 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/12 18:50:11 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:44:28 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t		i;
 
-	if (!s)
+	if (!s || fd < 0)
 		return ;
 	i = 0;
 	while (s[i] != '\0')
