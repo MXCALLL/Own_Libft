@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:00:24 by muidbell          #+#    #+#             */
-/*   Updated: 2024/11/12 17:28:37 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/11/14 12:36:00 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s1_ptr[i] > s2_ptr[i])
-			return (1);
-		if (s1_ptr[i] < s2_ptr[i])
-			return (-1);
+		if (s1_ptr[i] != s2_ptr[i])
+			return (s1_ptr[i] - s2_ptr[i]);
 		i++;
 	}
 	return (0);
